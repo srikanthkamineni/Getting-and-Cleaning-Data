@@ -36,6 +36,7 @@ names(merge_Label) <- "activity"
 #4. Appropriately labels the data set with descriptive variable names.
 names(merge_Subject) <- "subject"
 cleaned_Data <- cbind(merge_Subject, merge_Label, merge_Data)
+dim(cleaned_Data)
 write.table(cleaned_Data, "cleaned_data.txt")
 
 #5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
@@ -56,4 +57,5 @@ for(i in 1:subject_Len) {
         }
 }
 head(result)
+dim(result)
 write.table(result, "average_data.txt")
